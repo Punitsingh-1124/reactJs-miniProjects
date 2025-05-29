@@ -9,11 +9,21 @@ const App = () => {
         { title: "Include Number", state: false },
         { title: "Include Symbols", state: false },
     ]);
+    const [copied, setCopied] = useState(false);
 
     const handleCheckboxChange = (i) => {
         const updatedCheckboxData = [...checkboxData];
         updatedCheckboxData[i].state = !updatedCheckboxData[i].state;
         setCheckboxData(updatedCheckboxData);
+    };
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(password);
+        setCopied(true);
+
+        setTimeout(() =>{
+            setCopied(false);
+        },1000);
     };
 
     const { password, errorMessage, generatePassword } = usepasswordgenerator();
@@ -24,8 +34,8 @@ const App = () => {
             {password && (
                 <div className="header">
                     <div className="title">{password}</div>
-                    <button className='copyBtn' onClick={() => navigator.clipboard.writeText(password)}>
-                        Copy
+                    <button className='copyBtn' onClick={handleCopy}>
+                        {copied ? "Copied" : "copy"}
                     </button>
                 </div>
             )}
@@ -59,8 +69,8 @@ const App = () => {
                 ))}
             </div>
 
-            {/* Error Message */}
-            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+            {/* Generate Handling  */}
+            {errorMessage && <div className='errorMessage'>{errorMessage}</div>}
 
             {/* Generate Button */}
             <button
@@ -74,3 +84,5 @@ const App = () => {
 };
 
 export default App;
+
+////27:55 min
