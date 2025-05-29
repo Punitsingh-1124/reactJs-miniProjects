@@ -1,13 +1,14 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
-
 .container {
   background-color: #24232b;
   padding: 24px;
-  width: 50%;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
 }
-
 .header {
   color: #fff;
   display: flex;
@@ -66,10 +67,18 @@ button {
 
 .generateBtn {
   width: 100%;
-  font-size: 20px;
-  padding: 20px;
+  font-size: 16px;
+  padding: 12px;
 }
+
 .errorMessage{
   color: red;
   padding-bottom: 5px;
+}
+.password-stength{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  color: #fff;
 }

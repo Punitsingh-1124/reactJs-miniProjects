@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import usepasswordgenerator from './hooks/use-password-generator';
+import PasswordStrengthIndicator from './component/StrengthChecker';
+import Button from './component/Button';
+import Checkbox from './component/CheckBox';
 
 const App = () => {
     const [length, setLength] = useState(4);
@@ -21,9 +24,9 @@ const App = () => {
         navigator.clipboard.writeText(password);
         setCopied(true);
 
-        setTimeout(() =>{
+        setTimeout(() => {
             setCopied(false);
-        },1000);
+        }, 1000);
     };
 
     const { password, errorMessage, generatePassword } = usepasswordgenerator();
@@ -34,9 +37,11 @@ const App = () => {
             {password && (
                 <div className="header">
                     <div className="title">{password}</div>
-                    <button className='copyBtn' onClick={handleCopy}>
-                        {copied ? "Copied" : "copy"}
-                    </button>
+                    <Button
+                        text={copied ? "Copied" : "copy"}
+                        onClick={handleCopy}
+                        className="copyBtn"
+                    />
                 </div>
             )}
 
@@ -58,27 +63,24 @@ const App = () => {
             {/* Checkboxes */}
             <div className="checkboxes">
                 {checkboxData.map((checkbox, index) => (
-                    <div key={index}>
-                        <input
-                            onChange={() => handleCheckboxChange(index)}
-                            type="checkbox"
-                            checked={checkbox.state}
-                        />
-                        <label>{checkbox.title}</label>
-                    </div>
+                    <Checkbox
+                        key={index}
+                        title={checkbox.title}
+                        onChange={() => handleCheckboxChange(index)}
+                        state={checkbox.state}
+                    />
                 ))}
             </div>
+            {/* strength */}
+            <PasswordStrengthIndicator password={password} />
 
             {/* Generate Handling  */}
             {errorMessage && <div className='errorMessage'>{errorMessage}</div>}
-
-            {/* Generate Button */}
-            <button
+            <Button
+                text="Generate Password"
                 onClick={() => generatePassword(checkboxData, length)}
-                className='generateBtn'
-            >
-                Generate Password
-            </button>
+                className="generateBtn"
+            />
         </div>
     );
 };
