@@ -66,6 +66,55 @@ npm install
 ```bash
 npm run dev
 ```
+# 🔵 Cell Activation Grid (React + Vite)
+
+This is a small React app built using Vite. It renders a 3x3 grid with a specific pattern, where active cells (green) light up as you click them. Once all active cells are filled, they deactivate in reverse order.
+
+---
+
+## 🖼️ Preview
+
+![image](https://github.com/user-attachments/assets/dd09f8b5-e977-45e2-9c57-a50b1b80bda6)
+
+---
+
+## 📌 Features
+
+* 3x3 grid with pattern
+* Only valid (1-marked) cells are clickable
+* Green animation on activation
+* Deactivation in reverse after all active cells are clicked
+
+---
+
+## 🧠 Logic Notes
+
+* `config` array defines the grid layout
+* `order[]` tracks the activation sequence
+* Once all active cells are clicked, `deactivateCells()` runs, popping them in reverse
+
+---
+## 🚀 Getting Started
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/grid-lights.git
+cd grid-lights
+````
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the app
+
+```bash
+npm run dev
+```
+
+
 
 
 
