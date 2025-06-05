@@ -113,6 +113,49 @@ npm install
 ```bash
 npm run dev
 ```
+# 🔁 React Custom Memo Hook (Vite)
+
+A small React app using **Vite** that demonstrates a custom memoization hook `useCustomMemo` to avoid unnecessary re-computations.
+
+---
+
+## 📚 What I Learned
+
+- Setup React with **Vite**
+- Create custom hooks
+- Memoize expensive functions manually
+- Optimize performance using `useRef`
+
+---
+
+## ⚙️ Setup
+
+```bash
+git clone https://github.com/your-username/useMemo-hook-polyfill.git
+cd useMemo-hook-polyfill
+````
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the app
+
+```bash
+npm run dev
+```
+---
+
+## 🧠 How It Works
+
+* `counter` triggers an expensive square calculation.
+* `counter2` updates don’t trigger re-calculation.
+* Memo logic compares dependency changes.
+
+---
+
 
 
 
