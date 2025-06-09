@@ -156,8 +156,40 @@ npm run dev
 
 ---
 
+# ❤️ Like Button with React + Vite
 
+A simple Like/Unlike button using React and Vite, featuring loading state and error handling.
 
+---
+
+## 🧠 What I Learned
+
+* How to toggle UI state using `useState`
+* How to handle `fetch()` API calls with loading and error states
+* How to use SVG icons in React components
+* How to resolve CORS issues using mock APIs like [JSONPlaceholder](https://jsonplaceholder.typicode.com)
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/your-username/like-button.git
+cd like-button
+````
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the app
+
+```bash
+npm run dev
+```
+---
 
 
 
